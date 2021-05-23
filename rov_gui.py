@@ -34,22 +34,24 @@ def arm_rov():
  
         X = 0
         Y = 0
-        reading_gotten = False
-        while reading_gotten == False:
-            data = update()
+	Z = 0
+        #Depth is now commanded relative and not absolute
+	#reading_gotten = False
+        #while reading_gotten == False:
+            #data = update()
             #doubled up as there is some caching issue. 
-            data = update()
-            if 'VFR_HUD' in data:
-                current_depth = data['VFR_HUD']['alt']
-                current_heading = data['VFR_HUD']['heading']
-                reading_gotten =  True
+            #data = update()
+            #if 'VFR_HUD' in data:
+                #current_depth = data['VFR_HUD']['alt']
+                #current_heading = data['VFR_HUD']['heading']
+                #reading_gotten =  True
         
         master.mav.set_position_target_local_ned_send(
                 0, # timestamp
                 0, 0, # target system_id # target component id
                 mavutil.mavlink.MAV_FRAME_LOCAL_OFFSET_NED, #MAV_FRAME_BODY_OFFSET_NED, # offset to current position and heading, MAV_FRAME_LOCAL_OFFSET_NED for testing recording as it only gives position in NED
                 0b110111111000, # mask specifying use-only-x-y-z
-                X, Y, float(current_depth), # x y z 
+                X, Y, Z, # x y z 
                 0, 0, 0, #vx vy vz
                 0, 0, 0, # afx afy afz
                 0, 0) # yaw # yawrate
