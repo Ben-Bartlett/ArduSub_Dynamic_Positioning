@@ -35,16 +35,17 @@ def arm_rov():
         X = 0
         Y = 0
 	Z = 0
-        #Depth is now commanded relative and not absolute
-	#reading_gotten = False
-        #while reading_gotten == False:
-            #data = update()
+	
+	reading_gotten = False
+        while reading_gotten == False:
+            data = update()
             #doubled up as there is some caching issue. 
-            #data = update()
-            #if 'VFR_HUD' in data:
+            data = update()
+            if 'VFR_HUD' in data:
+		#Depth is now commanded relative and not absolute
                 #current_depth = data['VFR_HUD']['alt']
-                #current_heading = data['VFR_HUD']['heading']
-                #reading_gotten =  True
+                current_heading = data['VFR_HUD']['heading']
+                reading_gotten =  True
         
         master.mav.set_position_target_local_ned_send(
                 0, # timestamp
