@@ -4,6 +4,8 @@ The rov_gui.py file can be run in parallel to QGroundControl to control a BlueRO
 
 Assuming all of the below is setup correctly the file can be run as
     $ python rov_gui.py
+    
+NOTE: New single file exe for windows in trial. Currently untested as to whether or not it will connect to ROV
 
 ![GUI image alt text](/gui_pics/GUI.png)
 
