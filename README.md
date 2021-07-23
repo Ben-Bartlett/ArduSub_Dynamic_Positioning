@@ -102,7 +102,13 @@ To add the extra port for the program to run in parallel to QGroundControl the s
     ```
     $ pip install -r requirements.txt
     ```
-
+   NOTE: Tested but wasn't found to work very well. Only packages needed are
+    ```
+    $ pip install pymavlink
+    $ pip install numpy
+    $ pip install pillow
+    ```  
+   
 6. You can deactivate the environment as follows
     ```
     $ deactivate
