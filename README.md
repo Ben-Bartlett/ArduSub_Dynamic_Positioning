@@ -35,7 +35,7 @@ The following is aimed at Linux (Ubuntu 18.04 was used) no guarantee for Windows
    * I would recommend a firmware of no greater than 2.0.8 which can be downloaded by https://update.waterlinked.com/api/v1/download/CHIPID/SOFTWAREVERSION
    * ChipID can be found on the DVL web GUI, software version is 2.0.8. 2.2.1 does not work with this companion image
    
-2. Remove the SD card from the Comapanion Raspberry Pi PC and etch it with the image file I have create [here]()
+2. Remove the SD card from the Comapanion Raspberry Pi PC and etch it with the image file I have create [here](https://github.com/Ben-Bartlett/ArduSub_Dynamic_Positioning/tree/Tidy/binary)
     * This was created with the command 
        ```
        $ sudo dd bs=4M if=/dev/mccblk0 of=/home/desired_directory/image_name.img
